@@ -1,46 +1,45 @@
 <template>
-  <!-- Two-way Data-Binding -->
-  <quill-editor
-    ref="myQuillEditor"
-  />
-
+  <div class="component__editor">
+    <quill-editor v-model="content" :options="editorOption" ref="myQuillEditor" />
+    <button @click="submitText">送信</button>
+  </div>
 </template>
 
 <script>
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
-import 'quill/dist/quill.bubble.css'
+  import 'quill/dist/quill.core.css'
+  import 'quill/dist/quill.snow.css'
+  import 'quill/dist/quill.bubble.css'
 
-import { quillEditor } from 'vue-quill-editor'
+  import { quillEditor } from 'vue-quill-editor'
 
-export default {
-  components: {
-    quillEditor
-  },
-  name: 'VueQuillEditor',
+  export default {
+    data() {
+      return {
+        content: "",
+        editorOption: {
+          theme: 'snow',
+          syntax: 'true'
+        }
+      }
+    },
+    components: {
+      quillEditor
+    },
+    methods: {
+      submitText: function() {
+        this.$emit('submit', this.content);
+      }
+    },
+    name: 'VueQuillEditor',
 
-}
+  }
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h3 {
-    margin: 40px 0 0;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  a {
-    color: #42b983;
+  .component__editor {
+    max-width: 100%;
+    width: 50%;
   }
 
 </style>
