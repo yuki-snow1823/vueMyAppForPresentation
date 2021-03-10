@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <Editor />
+    <Viewer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Editor from './components/Editor.vue'
+import Viewer from './components/Viewer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    Editor
+    Editor,
+    Viewer
   }
 }
 </script>
