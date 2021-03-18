@@ -1,6 +1,6 @@
 <template>
   <div class="component__editor">
-    <quill-editor v-model="content" :options="editorOption" ref="myQuillEditor" />
+    <quill-editor v-model="content" :options="editorOption" />
     <button @click="submitText">送信</button>
   </div>
 </template>

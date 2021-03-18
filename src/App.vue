@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     addTextView: function(textData) {
-      console.log(textData);
       this.submittedText = textData;
     }
   }
