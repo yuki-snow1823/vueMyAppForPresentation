@@ -2,6 +2,8 @@
   <div id="app">
     <Editor @submit="addTextView" />
     <Viewer :textData="submittedText" />
+    <h1>{{ $store.state.count }}</h1>
+
   </div>
 </template>
 
